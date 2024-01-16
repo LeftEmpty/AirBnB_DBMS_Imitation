@@ -186,18 +186,109 @@ SELECT * FROM iu_propertyreviews_from_user_view WHERE propertylisting_id = 1;
 /* Booking data
 - this test case serves the purpose of testing the relationships relevant to a booking table entry  
 */
+CREATE VIEW iu_booking_view AS
 SELECT
-    B.id,
-    H.id
-    H.name
-    G.id
-    G.name
-    CCI.
-FROM Booking
-JOIN Host
-JOIN Guest
-JOIN 
+    B.booking_id AS booking_id,
+    B.propertylisting_id,
+    PL.name AS propertylisting_name,
+    H.host_id AS host_id,
+    HU.legal_name AS host_legal_name,
+    G.guest_id AS guest_id,
+    GU.legal_name AS guest_legal_name
+FROM Booking B
+JOIN PropertyListing PL ON B.propertylisting_id = PL.propertylisting_id
+JOIN Host H ON B.host_id = H.host_id
+JOIN User HU ON HU.user_id = H.user_id
+JOIN Guest G ON B.guest_id = G.guest_id
+JOIN User GU ON GU.user_id = G.user_id;
 
+-- usage examples of view (either look up booking via the transaction, or propertylisting)
+SELECT * FROM iu_booking_view WHERE booking_id = 1;
+SELECT * FROM iu_booking_view WHERE propertylisting_id = 1;
+
+/* Transaction, CreditCard, Bankinformation data 
+- Test case that shows the relation between transactions with payment informations, such as
+credit cards or banks and the corresponding booking
+- (this test case will be seen as sufficient for testing the proper implementaiton of the tables that are
+a part of it)
+*/
+CREATE VIEW iu_transaction_view AS
+SELECT
+    T.*,
+    B.booking_id AS Booking_id_ref,
+    CCI.creditcardinformation_id AS creditcard_id,
+    CCI.card_number AS creditcard_number,
+    BI.bankinformation_id AS bankinfo_id,
+    BI.account_nr AS bank_account_number
+FROM Transaction T
+JOIN Booking B ON T.booking_id = B.booking_id
+JOIN CreditCardInformation CCI ON T.creditcardinformation_id = CCI.creditcardinformation_id
+JOIN BankInformation BI ON T.bankinformation_id = BI.bankinformation_id;
+
+-- usage examples of view (either look up data via the transaction, or booking)
+SELECT * FROM iu_transaction_view WHERE transaction_id = 1;
+SELECT * FROM iu_transaction_view WHERE booking_id = 1;
+
+
+/* Wishlist data
+- test case that shows transaction data and proves the proper implementation of relationships
+*/
+CREATE VIEW iu_wishlist_details_view AS
+SELECT 
+    W.*,
+    U.legal_name AS owning_user_name,
+    PL.name AS property_listing_namne
+FROM
+    Wishlist W
+JOIN User U ON W.owning_user_id = U.user_id
+JOIN Wishlist_PropertyListing WPL ON W.wishlist_id = WPL.wishlist_id
+JOIN PropertyListing PL ON WPL.propertylisting_id = PL.propertylisting_id;
+
+-- usage example of view 
+SELECT * FROM iu_wishlist_details_view WHERE W.wishlist_id = 1;
+
+-- this view gets all data regarding the property listings that are in a given wishlist
+CREATE VIEW iu_wishlist_propertylistings_view AS
+SELECT
+    W.wishlist_id,
+    PL.*
+FROM Wishlist W
+JOIN Wishlist_PropertyListing WPL ON W.wishlist_id = WPL.wishlist_id
+JOIN PropertyListing PL ON WPL.propertylisting_id = PL.propertylisting_id;
+
+-- usage example of view 
+SELECT * FROM iu_wishlist_propertylistings_view WHERE wishlist_id = 1;
+
+
+/* Chat & Message data 
+- two examples, the first one will display general details of the chat, the second text will 
+*/
+CREATE VIEW iu_chat_details_view AS
+SELECT
+    C.*,
+    UO.legal_name AS owning_user_name,
+    UP.legal_name AS partner_guest_name,
+    COUNT(M.message_id) AS message_count
+FROM Chat C
+JOIN User UO ON C.owner_user_id = UO.user_id
+JOIN User UP ON C.chat_partner_id = UP.user_id
+LEFT JOIN Message M ON M.owning_chat_id = C.chat_id
+GROUP BY C.chat_id, UO.legal_name, UP.legal_name;
+
+-- usage example of view 
+SELECT * FROM iu_chat_details_view WHERE chat_id = 1;
+
+CREATE VIEW iu_chat_messages_view AS
+SELECT
+    M.message_id,
+    M.text,
+    M.image_id,
+    C.chat_id AS owning_chat_id_ref
+FROM Message M
+JOIN Chat C ON C.chat_id = M.owning_chat_id;
+
+-- usage example of view
+SELECT * FROM iu_chat_messages_view WHERE owning_chat_id_ref = 1;
 
 -------------------------------------------------------------------------------------------------
 /* following now are some simple test cases that should not require any detailed documentation */
@@ -212,35 +303,26 @@ SELECT * FROM Address;
 SELECT * FROM PropertyType;
 
 /* Amenity data */
-SELECT * FROM ;
+SELECT * FROM Amenity;
 
 /* Category data */
-SELECT * FROM ;
+SELECT * FROM Category;
 
-/*  */
-SELECT * FROM ;
+/* HouseRule data  */
+SELECT * FROM HouseRule;
 
-/*  */
-SELECT * FROM ;
+/* Image data */
+SELECT * FROM Image;
 
-/*  */
-SELECT * FROM ;
+/* Giftcard data */
+SELECT * FROM GiftCard;
 
-/*  */
-SELECT * FROM ;
+/* Currency data */
+SELECT * FROM Currency;
 
-/*  */
-SELECT * FROM ;
+/* Language data */
+SELECT * FROM Language;
 
-/*  */
-SELECT * FROM ;
-
-/*  */
-SELECT * FROM ;
-
-
-
-
-
-
+/* EmergencyContact data */
+SELECT * FROM EmergencyContact;
 
