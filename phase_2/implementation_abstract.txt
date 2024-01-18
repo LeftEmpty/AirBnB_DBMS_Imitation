@@ -1,9 +1,8 @@
 After the initial concept was made, i started working on implementing the database using MySQL 8.1.
 
-Before i talk about the steps i took to implement the database i would like to talk about what exactly it is that was to be achieved.
-The goal of this phase is to, obviously, implement the concept but also to create data entries and test cases for it, as well as document each component.
+Before i talk about the steps i took to implement the database i would like to talk about what exactly it is that needed to be achieved. The goal of this phase is to, obviously, implement the concept but also to create data entries and test cases for it, as well as document each component.
 
-With this goal in mind i began with translating the ER model into individual CREATE statements to implement the respective tables. While doing so i itteravely made adjustments to both the ERM, the data dictionary and the documentation. Building up the structure of the datamodel i began running 'system tests' to see if all the constraints would work well with each other, making small adjustments and iterations where necessary. (Changes are documenting in the presentation)
+With this goal in mind i began with translating the ER model into individual CREATE statements to implement the respective tables. While doing so i iteratively made adjustments to both the ER model, the data dictionary and the documentation. Building up the structure of the datamodel i began running 'system tests' to see if all the constraints would work well with each other, making small adjustments and iterations where necessary. (Changes are documenting in the presentation)
 
 After completing the structure of the model i created dummy data. I tried to keep the dummy data somewhat realistic without using unreasonable effort, the test data should therefore be semi-plausable and sufficient for testing.
 
