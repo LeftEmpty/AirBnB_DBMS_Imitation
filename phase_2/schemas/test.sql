@@ -146,7 +146,7 @@ SELECT * FROM iu_propertylisting_amentities_view WHERE propertylisting_id = 1;
 - quite simple as the userreview shares the attribute 'user_id' which can be used for a natural join,
 otherwise a left join on user_id could be used when only specific data is desired
 */
-CREATE VIEW iu_userreviews_from_user_view AS
+CREATE VIEW iu_userreviews_view AS
 SELECT *
 FROM User
 NATURAL JOIN UserReview;
@@ -157,14 +157,14 @@ NATURAL JOIN UserReview UR;
 */
 
 -- usage example of view
-SELECT * FROM iu_userreviews_from_user_view WHERE user_id = 1;
+SELECT * FROM iu_userreviews_view WHERE user_id = 1;
 
 
 /* PropertyReviews are very similar to the UserReviews above, i will therefore not go into much detail
 about the structure of the query / test case
 - the reason i constrained the query is that it would otherwise be very bloated with less readability
 */
-CREATE VIEW iu_propertyreviews_from_user_view AS
+CREATE VIEW iu_propertyreviews_view AS
 SELECT 
     PL.propertylisting_id, -- left in to show that PL.id and PR. id are equal -> functioning relation
     PL.name,
@@ -173,7 +173,7 @@ FROM PropertyListing PL
 JOIN PropertyReview PR ON PL.propertylisting_id = PR.property_id;
 
 -- usage example of view
-SELECT * FROM iu_propertyreviews_from_user_view WHERE propertylisting_id = 1;
+SELECT * FROM iu_propertyreviews_view WHERE propertylisting_id = 1;
 
 
 /* Booking data

@@ -77,64 +77,64 @@ it is deleted from the table and is therefore no longer accessible.
 */
 ALTER TABLE GiftCard AUTO_INCREMENT = 1;
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("TYTYZSNBMAQRTJOY", 15.00, 1, TIMESTAMP("2024-08-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("P64C576WLIJ4YBPZ", 15.00, 1, TIMESTAMP("2025-01-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("MYTQT96YLSXISFE3", 25.00, 2, TIMESTAMP("2024-05-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("3Q78DHZDBFR7PV2Y", 10.00, 3, TIMESTAMP("2025-04-30", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("K60T835IMZWU00NF", 15.00, 2, TIMESTAMP("2025-05-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("FGX1GISU2CCX1DHK", 35.00, 6, TIMESTAMP("2025-03-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("WXOGCT50PLHTXWFQ", 35.00, 2, TIMESTAMP("2025-01-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("OJCFAB1JP1M6FNJJ", 50.00, 3, TIMESTAMP("2025-04-30", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("MW7F3YU8FWUL35KC", 100.00, 1, TIMESTAMP("2024-09-30", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("TXEWZSDC6O9QAYS6", 25.00, 1, TIMESTAMP("2024-08-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("89MY6ZHIIZ2ZP4WV", 15.00, 1, TIMESTAMP("2024-10-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("U8L7EN71DPMLH9TM", 1500.00, 20, TIMESTAMP("2023-11-30", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("NROUSHQEMNG6TQG3", 50.00, 6, TIMESTAMP("2024-08-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("0H96ZLDREHK327IR", 15.00, 1, TIMESTAMP("2024-12-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("MFARAOTI1IZ5FW56", 15.00, 6, TIMESTAMP("2023-12-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("GAQCIFSJ7124AXZ3", 15.00, 1, TIMESTAMP("2024-12-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("O1O7FVELV7OZTZUB", 5000.00, 20, TIMESTAMP("2024-08-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("28N86O2VG4QFV8FV", 15.00, 1, TIMESTAMP("2024-02-29", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("7R8LP7XVGDCQIA3H", 50.00, 2, TIMESTAMP("2024-08-31", "00:00:00"));
 
-INSERT INTO GiftCard (giftcard_code, amount_usd, currency_id, valid_until_date)
+INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("14RK71JJBV802BUJ", 10.00, 3, TIMESTAMP("2025-03-31", "00:00:00"));
 
 
@@ -890,8 +890,8 @@ VALUES ("United Kingdom", "England", "London", "456 Oak St", 456, "SW1A 1AA", "b
 SET @bankaddress_id = LAST_INSERT_ID();
 
 /* BankInformaion data, using the previously inserted address data */
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543229", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Barclays Bank plc", "9876543229", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -923,8 +923,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("USA", "California", "Los Angeles", "456 Oak St", 456, "90002", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543210", "456", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Wells Fargo Bank","9876543210", "456", @bankaddress_id);
 
 COMMIT;
 
@@ -956,8 +956,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("UK", "England", "London", "789 Oak St", 789, "SW1A 1AA", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "5432167890", "987", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Barclays Bank plc", "5432167890", "987", @bankaddress_id);
 
 COMMIT;
 
@@ -989,8 +989,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Australia", "New South Wales", "Sydney", "456 Pine St", 456, "2000", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543211", "456", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Commonwealth Bank of Australia", "9876543211", "456", @bankaddress_id);
 
 COMMIT;
 
@@ -1022,8 +1022,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Germany", "Bavaria", "Munich", "101 Birch St", 101, "80331", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543212", "789", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Deutsche Bank AG", "9876543212", "789", @bankaddress_id);
 
 COMMIT;
 
@@ -1055,8 +1055,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("France", "Île-de-France", "Paris", "456 Oak St", 456, "75001", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543213", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "BNP Paribas", "9876543213", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1088,8 +1088,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Japan", "Tokyo", "Chiyoda", "101 Pine St", 101, "100-0001", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543214", "789", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Mitsubishi UFJ Financial Group", "9876543214", "789", @bankaddress_id);
 
 COMMIT;
 
@@ -1121,8 +1121,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Brazil", "São Paulo", "São Paulo", "456 Elm St", 456, "01000-000", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543215", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Banco do Brasil", "9876543215", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1154,8 +1154,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Italy", "Lazio", "Rome", "456 Oak St", 456, "00186", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543216", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "UniCredit S.p.A.", "9876543216", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1187,8 +1187,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Spain", "Madrid", "Madrid", "101 Birch St", 101, "28001", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543217", "789", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Banco Santander", "9876543217", "789", @bankaddress_id);
 
 COMMIT;
 
@@ -1220,8 +1220,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Germany", "Berlin", "Berlin", "456 Elm St", 456, "10115", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543218", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Commerzbank AG", "9876543218", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1253,8 +1253,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Netherlands", "North Holland", "Amsterdam", "456 Oak St", 456, "1012 AB", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543219", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "ING Bank", "9876543219", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1286,8 +1286,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("United States", "California", "Los Angeles", "456 Oak St", 456, "90001", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543220", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Wells Fargo Bank", "9876543220", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1320,8 +1320,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Canada", "Ontario", "Toronto", "456 Oak St", 456, "M5V 1A1", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543221", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Royal Bank of Canada (RBC)", "9876543221", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1353,8 +1353,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("United States", "New York", "New York City", "456 Oak St", 456, "10001", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543222", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "JPMorgan Chase & Co.", "9876543222", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1386,8 +1386,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Japan", "Tokyo", "Tokyo", "456 Oak St", 456, "100-0004", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543223", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Mitsubishi UFJ Financial Group (MUFG)", "9876543223", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1419,8 +1419,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("France", "Île-de-France", "Paris", "456 Oak St", 456, "75001", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543224", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "BNP Paribas", "9876543224", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1452,8 +1452,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Germany", "Bavaria", "Munich", "456 Oak St", 456, "80331", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543225", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Deutsche Bank AG", "9876543225", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1485,8 +1485,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Spain", "Catalonia", "Barcelona", "456 Oak St", 456, "08001", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543226", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "anco Santander", "9876543226", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1518,8 +1518,8 @@ INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_t
 VALUES ("Australia", "New South Wales", "Sydney", "456 Oak St", 456, "2000", "bank");
 SET @bankaddress_id = LAST_INSERT_ID();
 
-INSERT INTO BankInformation (owning_host_id, account_nr, code, address_id)
-VALUES (@host_id, "9876543228", "123", @bankaddress_id);
+INSERT INTO BankInformation (owning_host_id, name, account_nr, code, address_id)
+VALUES (@host_id, "Commonwealth Bank of Australia (CBA)", "9876543228", "123", @bankaddress_id);
 
 COMMIT;
 
@@ -1644,47 +1644,47 @@ INSERT INTO Chat (chat_partner_id, owner_user_id) VALUES (31, 37);
 - the messages hold the individual text of a message and their owning user, they reference the owning chat,
 - their timestamp is used to recreate the chat when requried
 */
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 1", 1);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 2", 2);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 3", 3);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 4", 4);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 5", 5);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 6", 6);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 7", 7);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 8", 8);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 9", 9);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 10", 10);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 11", 11);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 12", 11);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 13", 12);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 14", 12);
-INSERT INTO Message (text, owning_chat_id) VALUES ("Content for message 15", 12);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 1", 1, 1);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 2", 1, 2);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 3", 2, 3);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 4", 1, 4);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 5", 3, 5);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 6", 4, 6);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 7", 6, 7);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 8", 4, 8);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 9", 6, 9);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 10", 9, 10);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 11", 13, 11);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 12", 14, 11);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 13", 16, 12);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 14", 17, 12);
+INSERT INTO Message (text, author_user_id, owning_chat_id) VALUES ("Content for message 15", 16, 12);
 
 /* examples with images - the same user_id must be used for the image and the chat message */
 INSERT INTO Image (uploaded_by_user_id, image_url)
 VALUES (1, "https://airbnb.com/images/chat_message_image1.jpg");
 SET @message_image_id = LAST_INSERT_ID();
-INSERT INTO Message (image_id, owning_chat_id) VALUES (@message_image_id, 12);
+INSERT INTO Message (image_id, author_user_id, owning_chat_id) VALUES (@message_image_id, 9, 12);
 
 INSERT INTO Image (uploaded_by_user_id, image_url)
 VALUES (1, "https://airbnb.com/images/chat_message_image1.jpg");
 SET @message_image_id = LAST_INSERT_ID();
-INSERT INTO Message (image_id, owning_chat_id) VALUES (@message_image_id, 13);
+INSERT INTO Message (image_id, author_user_id, owning_chat_id) VALUES (@message_image_id, 18, 13);
 
 INSERT INTO Image (uploaded_by_user_id, image_url)
 VALUES (1, "https://airbnb.com/images/chat_message_image1.jpg");
 SET @message_image_id = LAST_INSERT_ID();
-INSERT INTO Message (image_id, owning_chat_id) VALUES (@message_image_id, 14);
+INSERT INTO Message (image_id, author_user_id, owning_chat_id) VALUES (@message_image_id, 18, 14);
 
 INSERT INTO Image (uploaded_by_user_id, image_url)
 VALUES (1, "https://airbnb.com/images/chat_message_image1.jpg");
 SET @message_image_id = LAST_INSERT_ID();
-INSERT INTO Message (image_id, owning_chat_id) VALUES (@message_image_id, 15);
+INSERT INTO Message (image_id, author_user_id, owning_chat_id) VALUES (@message_image_id, 19, 15);
 
 INSERT INTO Image (uploaded_by_user_id, image_url)
 VALUES (1, "https://airbnb.com/images/chat_message_image1.jpg");
 SET @message_image_id = LAST_INSERT_ID();
-INSERT INTO Message (image_id, owning_chat_id) VALUES (@message_image_id, 15);
+INSERT INTO Message (image_id, author_user_id, owning_chat_id) VALUES (@message_image_id, 29, 15);
 
 
 /* PropertyListing 
@@ -2057,83 +2057,83 @@ INSERT INTO PropertyType (name, icon_url) VALUES ("Shared room", "https://airbnb
 - the other attributes are simple and obvious
 */
 -- PropertyReview 1
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (1, 1, 4, 4, 5, 4, 5, 4, "We had a wonderful stay at this place!");
 
 -- PropertyReview 2
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (2, 1, 2, 3, 3, 2, 4, 3, "This place is okay for the price, would stay again.");
 
 -- PropertyReview 3
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (3, 1, 2, 1, 1, 1, 1, 2, "I can't recommend this place unfortunately.");
 
 -- PropertyReview 4
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (4, 2, 5, 4, 4, 4, 5, 4, "We had a wonderful stay at this place!");
 
 -- PropertyReview 5
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (5, 2, 3, 2, 3, 2, 2, 2, "This place is okay for the price, would stay again.");
 
 -- PropertyReview 6
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (6, 3, 4, 4, 5, 4, 5, 4, "We had a wonderful stay at this place!");
 
 -- PropertyReview 7
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (7, 6, 3, 4, 4, 4, 5, 4, "We had a wonderful stay at this place!");
 
 -- PropertyReview 8
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (8, 6, 2, 4, 5, 1, 3, 2, "We had a wonderful stay at this place!");
 
 -- PropertyReview 9
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (9, 7, 3, 3, 3, 3, 3, 3, "We had a wonderful stay at this place!");
 
 -- PropertyReview 10
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (10, 9, 4, 4, 5, 4, 5, 4, "We had a wonderful stay at this place!");
 
 -- PropertyReview 11
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (11, 10, 5, 5, 5, 5, 5, 5, "We had a wonderful stay at this place!");
 
 -- PropertyReview 12
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (12, 1, 1, 1, 2, 2, 2, 3, "I can't recommend this place unfortunately.");
 
 -- PropertyReview 13
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (13, 13, 4, 4, 5, 4, 5, 4, "We had a wonderful stay at this place!");
 
 -- PropertyReview 14
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (14, 13, 3, 3, 2, 3, 2, 3, "This place is okay for the price, would stay again.");
 
 -- PropertyReview 15
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (15, 13, 2, 3, 3, 3, 3, 5, "This place is okay for the price, would stay again.");
 
 -- PropertyReview 16
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (16, 14, 5, 4, 5, 4, 4, 5, "We had a wonderful stay at this place!");
 
 -- PropertyReview 17
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (17, 16, 4, 4, 5, 4, 5, 4, "We had a wonderful stay at this place!");
 
 -- PropertyReview 18
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (18, 16, 2, 3, 2, 2, 2, 4, "This place is okay, would stay again.");
 
 -- PropertyReview 19
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (19, 17, 1, 2, 1, 1, 2, 1, "I don't recommend.");
 
 -- PropertyReview 20
-INSERT INTO PropertyReview (property_id, author_guest_id, overall_score, location_score, cleanliness_score, check_in_score, accuracy_score, image_id_score, comment)
+INSERT INTO PropertyReview (property_id, author_guest_id, cleanliness_score, accuracy_score, check_in_score, communication_score, location_score, value_score, comment)
 VALUES (20, 19, 3, 4, 3, 3, 4, 5, "This place is quite alright!");
 
 

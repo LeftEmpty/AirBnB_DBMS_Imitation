@@ -3,6 +3,8 @@ This schema will create all tables necessary for the database,
 the code should be self-explanatory but will be supplemented with further documentation in the form of
 an (updated) ER diagram and a ppt presentation, which are provided with the submission
 
+- (the lengths of the varchars were decided on after researching typical edge cases)
+
 I used the "MySQL 8.1 Command Line Client" for testing, it should of course work in any environment that supports MySQL 8.1 
 */
 
@@ -13,26 +15,26 @@ use ts_32111919;
 
 CREATE TABLE Address (
     address_id INT AUTO_INCREMENT PRIMARY KEY,
-    country VARCHAR(100) NOT NULL,
-    state VARCHAR(100) NOT NULL,
-    city VARCHAR(100) NOT NULL,
-    street VARCHAR(100) NOT NULL,
+    country VARCHAR(128) NOT NULL,
+    state VARCHAR(128) NOT NULL,
+    city VARCHAR(128) NOT NULL,
+    street VARCHAR(128) NOT NULL,
     house_nr INT NOT NULL,
     zip_code VARCHAR(10) NOT NULL,
-    address_type VARCHAR(25)
+    address_type VARCHAR(32)
 );
 
 CREATE TABLE User (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     address_id INT, /*FK*/
-    email VARCHAR(125) NOT NULL,
-    legal_name VARCHAR(125) NOT NULL,
+    email VARCHAR(128) NOT NULL,
+    legal_name VARCHAR(64) NOT NULL,
     governmentid_image_id INT
 );
 
 CREATE TABLE Image (
     image_id INT AUTO_INCREMENT PRIMARY KEY,
-    uploaded_by_user_id INT NOT NULL,
+    uploaded_by_user_id INT NOT NULL, /*FK*/
     image_url varchar(1024) NOT NULL,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -41,24 +43,24 @@ CREATE TABLE Image (
 
 CREATE TABLE Host (
     host_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT UNIQUE, /*FK*/
+    user_id INT UNIQUE NOT NULL, /*FK*/
     profile_image_id INT UNIQUE NOT NULL, /*FK*/
-    host_description TEXT,
-    phone_number VARCHAR(15)
+    host_description TEXT NOT NULL,
+    phone_number VARCHAR(16)
 );
 
 CREATE TABLE Guest (
     guest_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT UNIQUE, /*FK*/
+    user_id INT UNIQUE NOT NULL, /*FK*/
     profile_image_id INT UNIQUE NOT NULL, /*FK*/
     guest_description TEXT,
-    phone_number VARCHAR(15) NOT NULL
+    phone_number VARCHAR(16) NOT NULL
 );
 
 CREATE TABLE UserReview (
     userreview_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    author_user_id INT,
+    user_id INT NOT NULL, /*FK*/
+    author_user_id INT NOT NULL, /*FK*/
     comment VARCHAR(2000),
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     last_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -72,14 +74,14 @@ CREATE TABLE PropertyListing (
     owning_host_id INT NOT NULL, /*FK*/
     name VARCHAR(255) NOT NULL,
     address_id INT UNIQUE NOT NULL, /*FK*/
-    property_type_id INT,
+    property_type_id INT, /*FK*/
     bedroom_count INT,
     bathroom_count INT,
     available_booking_slots INT,
     price_per_night DECIMAL(10,2),
-    currency_id INT, /*FK*/
-    check_in_time TIME,
-    check_out_time TIME,
+    currency_id INT NOT NULL DEFAULT 1, /*FK*/
+    check_in_time TIME DEFAULT '14:00',
+    check_out_time TIME DEFAULT '10:00',
     average_rating DECIMAL(2,1) DEFAULT 0, /* should get updated by the applciation when a new review is published, is initially 0 */
     total_nr_of_ratings INT DEFAULT 0, /* should get updated/incremented by the applciation when a new review is published, is initially 0 */
 
@@ -88,14 +90,14 @@ CREATE TABLE PropertyListing (
 
 CREATE TABLE PropertyReview (
     propertyreview_id INT AUTO_INCREMENT PRIMARY KEY,
-    property_id INT, /*FK*/
-    author_guest_id INT, /*FK*/
-    overall_score INT,
-    location_score INT,
+    property_id INT NOT NULL, /*FK*/
+    author_guest_id INT NOT NULL, /*FK*/
     cleanliness_score INT,
-    check_in_score INT,
     accuracy_score INT,
-    image_id_score INT,
+    check_in_score INT,
+    communication_score INT,
+    location_score INT,
+    value_score INT,
     comment VARCHAR(2000),
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
@@ -153,24 +155,24 @@ CREATE TABLE PropertyType (
 CREATE TABLE Booking (
     booking_id INT AUTO_INCREMENT PRIMARY KEY,
     total_price DECIMAL(10,2) NOT NULL,
-    currency_id INT, /*FK*/
+    currency_id INT DEFAULT 1, /*FK*/
     booking_start_date TIMESTAMP NOT NULL,
     booking_end_date TIMESTAMP NOT NULL,
     confirmation_code VARCHAR(16) NOT NULL,
     cancelled BOOLEAN NOT NULL,
     cancellation_date DATE,
     refund_amount DECIMAL(10,2),
-    propertylisting_id INT, /*FK*/
-    host_id INT, /*FK*/
-    guest_id INT, /*FK*/
+    propertylisting_id INT NOT NULL, /*FK*/
+    host_id INT NOT NULl, /*FK*/
+    guest_id INT NOT NULL, /*FK*/
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Wishlist (
     wishlist_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    private BOOLEAN DEFAULT TRUE,
-    owning_user_id INT /*FK*/
+    private BOOLEAN NOT NULL DEFAULT TRUE,
+    owning_user_id INT NOT NULL /*FK*/
 );
 
 CREATE TABLE Wishlist_PropertyListing (
@@ -183,36 +185,36 @@ CREATE TABLE EmergencyContact (
     emergencycontact_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     relationship VARCHAR(255),
-    prefered_language_id INT, /*FK*/
+    prefered_language_id INT DEFAULT 1, /*FK*/
     email VARCHAR(255),
-    country_code VARCHAR (255),
-    phone_number VARCHAR(50) NOT NULL,
+    country_code VARCHAR (32),
+    phone_number VARCHAR(15) NOT NULL,
     owning_user_id INT NOT NULL /*FK*/
 );
 
 CREATE TABLE Language (
     language_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255),
-    country VARCHAR(255)
+    name VARCHAR(32) NOT NULL,
+    country VARCHAR(32)
 );
 
 CREATE TABLE Currency (
     currency_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255),
+    name VARCHAR(64) NOT NULL,
     abbreviation VARCHAR(3)
 );
 
 CREATE TABLE GiftCard (
     giftcard_code VARCHAR(16) PRIMARY KEY,
-    amount_usd DECIMAL(10,2),
-    currency_id INT, /*FK*/
+    amount DECIMAL(10,2) NOT NULL,
+    currency_id INT NOT NULL DEFAULT 1, /*FK*/
     valid_until_date TIMESTAMP NOT NULL,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Transaction (
     transaction_id INT AUTO_INCREMENT PRIMARY KEY,
-    booking_id INT, /*FK*/
+    booking_id INT NOT NULL, /*FK*/
     bankinformation_id INT, /*FK*/
     creditcardinformation_id INT, /*FK*/
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -221,9 +223,9 @@ CREATE TABLE Transaction (
 
 CREATE TABLE CreditCardInformation (
     creditcardinformation_id INT AUTO_INCREMENT PRIMARY KEY,
-    owning_guest_id INT, /*FK*/
-    bank VARCHAR(255) NOT NULL,
-    card_number VARCHAR(255) NOT NULL,
+    owning_guest_id INT NOT NULL, /*FK*/
+    bank VARCHAR(128) NOT NULL,
+    card_number VARCHAR(64) NOT NULL,
     cvc_code VARCHAR(3) NOT NULL,
     expiration_date DATE NOT NULL
 );
@@ -231,8 +233,9 @@ CREATE TABLE CreditCardInformation (
 CREATE TABLE BankInformation (
     bankinformation_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     owning_host_id INT NOT NULL, /*FK*/
-    account_nr VARCHAR(25) NOT NULL,
-    code VARCHAR(25) NOT NULL,
+    name VARCHAR(128) NOT NULL,
+    account_nr VARCHAR(32) NOT NULL,
+    code VARCHAR(64) NOT NULL,
     address_id INT NOT NULL /*FK*/
 );
 
@@ -247,10 +250,10 @@ CREATE TABLE Chat (
 CREATE TABLE Message (
     message_id INT AUTO_INCREMENT PRIMARY KEY,
     text TEXT,
-    created TIMESTAMP,
     image_id INT, /*FK*/
-    owning_user_id INT, /*FK*/
-    owning_chat_id INT /*FK*/
+    author_user_id INT, /*FK*/
+    owning_chat_id INT, /*FK*/
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 
