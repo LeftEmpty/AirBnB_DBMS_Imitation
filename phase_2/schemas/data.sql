@@ -1696,142 +1696,142 @@ INSERT INTO Message (image_id, owning_chat_id) VALUES (@message_image_id, 15);
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "New York", "Brooklyn", "Elm Street", "1234", "11201", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Cozy Studio Apartment", @property_address_id, 1, 1, 1, 2, 50.00, 1, "15:00:00", "11:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (1, "Cozy Studio Apartment", @property_address_id, 1, 1, 1, 2, 50.00, 1, "15:00:00", "11:00:00");
 
 -- PropertyListing 2
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "California", "San Francisco", "Oak Avenue", "5678", "94110", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Cozy Studio Apartment", @property_address_id, 1, 1, 1, 2, 50.00, 1, "15:00:00", "11:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (1, "Tranquil Retreat Cottage", @property_address_id, 1, 1, 1, 2, 50.00, 1, "15:00:00", "11:00:00");
 
 -- PropertyListing 3
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "California", "Los Angeles", "Maple Drive", "910", "90046", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Spacious Loft in the City", @property_address_id, 2, 2, 1, 4, 120.00, 1, "16:00:00", "10:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (1, "Spacious Loft in the City", @property_address_id, 2, 2, 1, 4, 120.00, 1, "16:00:00", "10:00:00");
 
 -- PropertyListing 4
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "Illinois", "Chicago", "Pine Lane", "123", "60611", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Luxurious Beachfront Villa", @property_address_id, 3, 4, 3, 6, 300.00, 1, "14:00:00", "12:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (1, "Luxurious Beachfront Villa", @property_address_id, 3, 4, 3, 6, 300.00, 1, "14:00:00", "12:00:00");
 
 -- PropertyListing 5
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "Florida", "Miami", "Birch Street", "456", "33133", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Mountain Retreat Cabin", @property_address_id, 4, 2, 1, 3, 80.00, 1, "12:00:00", "10:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (6, "Mountain Retreat Cabin", @property_address_id, 4, 2, 1, 3, 80.00, 1, "12:00:00", "10:00:00");
 
 -- PropertyListing 6
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "Texas", "Austin", "Cedar Road", "789", "78701", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Historic Townhouse", @property_address_id, 5, 3, 2, 5, 150.00, 1, "15:00:00", "11:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (7, "Historic Townhouse", @property_address_id, 5, 3, 2, 5, 150.00, 1, "15:00:00", "11:00:00");
 
 -- PropertyListing 7
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "Washington", "Seattle", "Redwood Boulevard", "1011", "98101", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Rustic Countryside Cottage", @property_address_id, 1, 2, 1, 3, 90.00, 2, "13:00:00", "10:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (9, "Rustic Countryside Cottage", @property_address_id, 1, 2, 1, 3, 90.00, 2, "13:00:00", "10:00:00");
 
 -- PropertyListing 8
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "Georgia", "Atlanta", "Maple Court", "1213", "30308", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Modern City View Condo", @property_address_id, 2, 1, 1, 2, 70.00, 3, "14:00:00", "12:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (11, "Modern City View Condo", @property_address_id, 2, 1, 1, 2, 70.00, 3, "14:00:00", "12:00:00");
 
 -- PropertyListing 9
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "Colorado", "Denver", "Cedar Avenue", "1415", "80202", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Secluded Lakeside Cabin", @property_address_id, 3, 3, 2, 4, 120.00, 2, "16:00:00", "10:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (12, "Secluded Lakeside Cabin", @property_address_id, 3, 3, 2, 4, 120.00, 2, "16:00:00", "10:00:00");
 
 -- PropertyListing 10
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "Oregon", "Portland", "Oak Lane", "1617", "97209", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Charming Historic Cottage", @property_address_id, 4, 1, 1, 2, 60.00, 3, "12:00:00", "11:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (15, "Charming Historic Cottage", @property_address_id, 4, 1, 1, 2, 60.00, 3, "12:00:00", "11:00:00");
 
 -- PropertyListing 11
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United States", "Massachusetts", "Boston", "Elm Road", "1819", "02110", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Luxury Loft Downtown", @property_address_id, 2, 3, 2, 4, 150.00, 1, "15:00:00", "11:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (16, "Luxury Loft Downtown", @property_address_id, 2, 3, 2, 4, 150.00, 1, "15:00:00", "11:00:00");
 
 -- PropertyListing 12
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("Canada", "Ontario", "Toronto", "Maple Street", "123", "M5A 1T1", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Seaside Villa Retreat", @property_address_id, 1, 4, 3, 6, 250.00, 2, "16:00:00", "10:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (17, "Seaside Villa Retreat", @property_address_id, 1, 4, 3, 6, 250.00, 2, "16:00:00", "10:00:00");
 
 -- PropertyListing 13
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("United Kingdom", "England", "London", "Baker Street", "456", "W1U 6TY", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Cozy Mountain Cabin", @property_address_id, 3, 2, 1, 2, 100.00, 3, "14:00:00", "12:00:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (17, "Cozy Mountain Cabin", @property_address_id, 3, 2, 1, 2, 100.00, 3, "14:00:00", "12:00:00");
 
 -- PropertyListing 14
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("France", "Île-de-France", "Paris", "Champs-Élysées", "789", "75008", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
-VALUES ("Historic Downtown Charm", @property_address_id, 2, 1, 1, 3, 120.00, 1, "13:00:00", "11:30:00");
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time)
+VALUES (18, "Historic Downtown Charm", @property_address_id, 2, 1, 1, 3, 120.00, 1, "13:00:00", "11:30:00");
 
 /* added some additional dummy data for demonstration purposes */
 -- PropertyListing 15
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("Australia", "New South Wales", "Sydney", "Bondi Road", "1011", "2000", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
-VALUES ("Modern Skyline View", @property_address_id, 1, 2, 2, 5, 180.00, 2, "15:30:00", "10:30:00", 4.9, 62);
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
+VALUES (18, "Modern Skyline View", @property_address_id, 1, 2, 2, 5, 180.00, 2, "15:30:00", "10:30:00", 4.9, 62);
 
 -- PropertyListing 16
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("Germany", "Berlin", "Berlin", "Brandenburg Avenue", "1213", "10117", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
-VALUES ("Rural Farmhouse Retreat", @property_address_id, 3, 3, 2, 4, 160.00, 3, "14:00:00", "12:00:00", 4.4, 34);
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
+VALUES (18, "Rural Farmhouse Retreat", @property_address_id, 3, 3, 2, 4, 160.00, 3, "14:00:00", "12:00:00", 4.4, 34);
 
 -- PropertyListing 17
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("Japan", "Tokyo", "Shibuya-ken", "Shibuya Street", "1415", "150-0042", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
-VALUES ("Downtown Penthouse Suite", @property_address_id, 1, 3, 2, 4, 200.00, 1, "16:00:00", "10:00:00", 4.7, 51);
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
+VALUES (19, "Downtown Penthouse Suite", @property_address_id, 1, 3, 2, 4, 200.00, 1, "16:00:00", "10:00:00", 4.7, 51);
 
 -- PropertyListing 18
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("Brazil", "São Paulo", "São Paulo", "Avenida Paulista", "1617", "01310-100", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
-VALUES ("Tranquil Lakeside Cabin", @property_address_id, 3, 2, 1, 3, 130.00, 2, "14:30:00", "11:30:00", 4.3, 46);
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
+VALUES (20, "Tranquil Lakeside Cabin", @property_address_id, 3, 2, 1, 3, 130.00, 2, "14:30:00", "11:30:00", 4.3, 46);
 
 -- PropertyListing 19
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("Netherlands", "North Holland", "Amsterdam", "Keizersgracht", "2223", "1015 CK", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
-VALUES ("Urban Oasis Loft", @property_address_id, 1, 2, 1, 5, 170.00, 3, "15:00:00", "11:00:00", 4.8, 58);
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
+VALUES (20, "Urban Oasis Loft", @property_address_id, 1, 2, 1, 5, 170.00, 3, "15:00:00", "11:00:00", 4.8, 58);
 
 -- PropertyListing 20
 INSERT INTO Address (country, state, city, street, house_nr, zip_code, address_type)
 VALUES ("India", "Maharashtra", "Mumbai", "Marine Drive", "2021", "400020", "property");
 SET @property_address_id = LAST_INSERT_ID();
-INSERT INTO PropertyListing (name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
-VALUES ("Ski Chalet Retreat", @property_address_id, 3, 4, 3, 6, 220.00, 1, "16:00:00", "10:00:00", 4.6, 39);
+INSERT INTO PropertyListing (owning_host_id, name, address_id, property_type_id, bedroom_count, bathroom_count, available_booking_slots, price_per_night, currency_id, check_in_time, check_out_time, average_rating, total_nr_of_ratings)
+VALUES (20, "Ski Chalet Retreat", @property_address_id, 3, 4, 3, 6, 220.00, 1, "16:00:00", "10:00:00", 4.6, 39);
 
 
 /* Wishlist

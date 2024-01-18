@@ -69,9 +69,9 @@ CREATE TABLE UserReview (
 
 CREATE TABLE PropertyListing (
     propertylisting_id INT AUTO_INCREMENT PRIMARY KEY,
-    owning_host_id INT, /*FK*/
-    name VARCHAR(255),
-    address_id INT UNIQUE, /*FK*/
+    owning_host_id INT NOT NULL, /*FK*/
+    name VARCHAR(255) NOT NULL,
+    address_id INT UNIQUE NOT NULL, /*FK*/
     property_type_id INT,
     bedroom_count INT,
     bathroom_count INT,

@@ -71,23 +71,18 @@ SELECT
     H.phone_number,
     IProfile.image_url AS profile_image_url,
     IGovernID.image_url AS governmentid_image_url,
-    EC.name AS emergency_contact_name,
-    EC.relationship AS emergency_contact_relationship,
-    EC.email AS emergency_contact_email,
-    EC.country_code AS emergency_contact_country_code,
-    EC.phone_number AS emergency_contact_phone_number,
-    CCI.bank AS credit_card_bank,
-    CCI.card_number AS credit_card_number,
-    CCI.cvc_code AS credit_card_cvc,
-    CCI.expiration_date AS credit_card_expiration_date
+    BI.account_nr AS bank_account_nr,
+    BI.code AS bank_code,
+    BI.address_id AS bank_address_id,
+    BIA.country AS bank_address_country
 FROM
     User U
 JOIN Address A ON U.address_id = A.address_id
 JOIN Host H ON U.user_id = H.user_id
 JOIN Image IProfile ON H.profile_image_id = IProfile.image_id
 JOIN Image IGovernID ON U.governmentid_image_id = IGovernID.image_id
-LEFT JOIN EmergencyContact EC ON U.user_id = EC.owning_user_id
-LEFT JOIN CreditCardInformation CCI ON H.host_id = CCI.owning_guest_id;
+LEFT JOIN BankInformation BI ON H.host_id = BI.owning_host_id
+JOIN Address BIA ON BI.address_id = BIA.address_id;
 
 -- usage example of view
 SELECT * FROM iu_userhost_view WHERE user_id = 21;
@@ -103,31 +98,29 @@ propertylisting and amenities, categories and houserules.
 CREATE VIEW iu_propertylisting_view AS
 SELECT
     PL.propertylisting_id,
-    PL.owning_host_id,
-    PL.name,
-    PL.property_type_id,
-    PT.name AS property_type_name,
-    PL.bedroom_count,
-    PL.bathroom_count,
-    PL.available_booking_slots,
+    PL.name AS propertylisting_name,
+    PT.name AS property_type,
     PL.price_per_night,
-    PL.currency_id,
-    PL.check_in_time,
-    PL.check_out_time,
-    PL.average_rating,
-    PL.total_nr_of_ratings,
+    C.name AS currency,
     A.country,
     A.state,
     A.city,
     A.street,
     A.house_nr,
-    A.zip_code
+    A.zip_code,
+    H.host_id AS host_id,
+    HU.legal_name AS host_name
 FROM
     PropertyListing PL
 JOIN Address A ON PL.address_id = A.address_id
+JOIN Host H ON PL.owning_host_id = H.host_id
+JOIN User HU ON H.user_id = HU.user_id
+JOIN Currency C ON PL.currency_id = C.currency_id
 JOIN PropertyType PT ON PL.property_type_id = PT.propertytype_id;
 
+-- usage example of view
 SELECT * FROM iu_propertylisting_view WHERE propertylisting_id = 1;
+SELECT * FROM iu_propertylisting_view WHERE host_id = 1;
 
 /* this test case shows the selected amenities for a certain propertylisting
 - this same structure will work for categories and houserules as well, which will not be included as
@@ -231,7 +224,9 @@ SELECT * FROM iu_transaction_view WHERE booking_id = 1;
 
 
 /* Wishlist data
-- test case that shows transaction data and proves the proper implementation of relationships
+- test case that shows the wishlist, user and property listing data to proves the proper
+implementation of links between them. Goal is to see the relationship of a user owning 
+a wishlist, which in turn 'owns' (multiple) propertylistings. 
 */
 CREATE VIEW iu_wishlist_details_view AS
 SELECT 
@@ -245,7 +240,7 @@ JOIN Wishlist_PropertyListing WPL ON W.wishlist_id = WPL.wishlist_id
 JOIN PropertyListing PL ON WPL.propertylisting_id = PL.propertylisting_id;
 
 -- usage example of view 
-SELECT * FROM iu_wishlist_details_view WHERE W.wishlist_id = 1;
+SELECT * FROM iu_wishlist_details_view WHERE wishlist_id = 1;
 
 -- this view gets all data regarding the property listings that are in a given wishlist
 CREATE VIEW iu_wishlist_propertylistings_view AS
@@ -261,7 +256,8 @@ SELECT * FROM iu_wishlist_propertylistings_view WHERE wishlist_id = 1;
 
 
 /* Chat & Message data 
-- two examples, the first one will display general details of the chat, the second text will 
+- two examples, the first one will display general details of the chat, the second text will
+return all messages of a given chat
 */
 CREATE VIEW iu_chat_details_view AS
 SELECT
@@ -290,11 +286,10 @@ JOIN Chat C ON C.chat_id = M.owning_chat_id;
 -- usage example of view
 SELECT * FROM iu_chat_messages_view WHERE owning_chat_id_ref = 1;
 
+
 -------------------------------------------------------------------------------------------------
 /* following now are some simple test cases that should not require any detailed documentation */
 -------------------------------------------------------------------------------------------------
-
-
 
 /* Address data */
 SELECT * FROM Address;
@@ -325,4 +320,3 @@ SELECT * FROM Language;
 
 /* EmergencyContact data */
 SELECT * FROM EmergencyContact;
-
