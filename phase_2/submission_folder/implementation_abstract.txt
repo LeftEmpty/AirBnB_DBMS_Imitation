@@ -24,7 +24,7 @@ To sum up the implementation process of this database, the rough order is starti
 
 
 --------
-v3 
+v3 (168 words)
 --------
 The database implementation commenced by translating the Entity-Relationship (ER) model into CREATE statements for individual tables, accompanied by iterative refinements to the ER model, data dictionary, and documentation. Occasionaly 'system tests' were conducted to ensure seamless constraint functionality, prompting necessary adjustments.
 
