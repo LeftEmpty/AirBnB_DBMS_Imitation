@@ -442,14 +442,12 @@ FOREIGN KEY (creditcardinformation_id)
 REFERENCES CreditCardInformation(creditcardinformation_id)
 ON DELETE CASCADE ON UPDATE CASCADE;
 
-
 /* CreditCardInformation constraints */
 ALTER TABLE CreditCardInformation
 ADD CONSTRAINT fk_ccinformation_guest
 FOREIGN KEY (owning_guest_id)
 REFERENCES Guest(guest_id)
 ON DELETE CASCADE ON UPDATE CASCADE;
-
 
 /* BankInformation constraints */
 ALTER TABLE BankInformation

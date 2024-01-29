@@ -138,6 +138,10 @@ INSERT INTO GiftCard (giftcard_code, amount, currency_id, valid_until_date)
 VALUES ("14RK71JJBV802BUJ", 10.00, 3, TIMESTAMP("2025-03-31", "00:00:00"));
 
 
+ALTER TABLE User AUTO_INCREMENT = 1;
+ALTER TABLE Guest AUTO_INCREMENT = 1;
+ALTER TABLE EmergencyContact AUTO_INCREMENT = 1;
+ALTER TABLE CreditCardInformation AUTO_INCREMENT = 1;
 /*
 User, Guest, EmergencyContact, CreditCardInformation, Address (SQL Transaction)
 
@@ -147,11 +151,7 @@ We use a transaction for this because the data is cloesly related to each other.
 
 * i will only comment the first transaction as the rest follow the same schematic
 */
-ALTER TABLE User AUTO_INCREMENT = 1;
-ALTER TABLE Guest AUTO_INCREMENT = 1;
-ALTER TABLE EmergencyContact AUTO_INCREMENT = 1;
-ALTER TABLE CreditCardInformation AUTO_INCREMENT = 1;
-
+-- Guest 1
 -- start the transaction
 START TRANSACTION;
 
@@ -1863,7 +1863,7 @@ INSERT INTO Wishlist (name, private, owning_user_id) VALUES ("wishlist 20", FALS
 
 /* Wishlist_propertylisting
 - this is a relation table that links the wishlists and the properties together
-- the wishlist_id references the previous Wishlist relation, the 
+- the wishlist_id references the previous Wishlist relation
 */
 INSERT INTO Wishlist_PropertyListing (propertylisting_id, wishlist_id) VALUES (1, 1);
 INSERT INTO Wishlist_PropertyListing (propertylisting_id, wishlist_id) VALUES (2, 1);
@@ -1916,7 +1916,8 @@ INSERT INTO Amenity (name, icon_url) VALUE ("Security cameras on property", "htt
 
 /* Property_Amenity
 - this relation links the properties with their respective amentities
-- the id of the property is 
+- each propertylisting will essentially have multiple entries with its id in this table,
+each pointing at a the different amenities selected in the propertylisting
 */
 INSERT INTO Property_Amenity (property_id, amenity_id) VALUES (1,1);
 INSERT INTO Property_Amenity (property_id, amenity_id) VALUES (1,5);
