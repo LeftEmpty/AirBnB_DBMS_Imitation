@@ -52,7 +52,7 @@ CREATE TABLE Host (
 CREATE TABLE Guest (
     guest_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT UNIQUE NOT NULL, /*FK*/
-    profile_image_id INT UNIQUE NOT NULL, /*FK*/
+    profile_image_id INT UNIQUE, /*FK*/
     guest_description TEXT,
     phone_number VARCHAR(16) NOT NULL
 );
