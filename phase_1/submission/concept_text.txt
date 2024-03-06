@@ -1,0 +1,7 @@
+This concept is intended to show one possible immitation of a database that a web application like Airbnb might use. 
+
+The most important problem in this database structure is how we lay out the entities in a way that enables flexability and scaleability. In this concept we try to achieve this by, in the case of the property listings for example, creating different tables that allows for simple creation of categories, types, house rules, etc. which are then linked to a property listing via it's id in a seperate table.
+
+This implementation of the N:CM relationship will provide the necessary freedom to enable future addtions to the database, in the case that Airbnb wants to implement or change entries.
+
+Another important aspect, that is somewhat unique to this structure is that there are two different user types, the host and the guest. The way we can implement this in a way that produces the least amount of redundancy is the joined sub-class table strategy, we therefore implement a user "superclass" of which both host and guest derive of. 

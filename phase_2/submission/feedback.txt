@@ -1,0 +1,8 @@
+Hello Tom, 
+
+your overall work is fine. 
+
+just as a hint: try to define FK at the time of creating table that will help a lot, (you do not need to change it)
+
+Good luck, 
+Musharaf
