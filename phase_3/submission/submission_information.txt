@@ -1,0 +1,9 @@
+Final submission for DLBDSPBDM01 - Project: Build a Data Mart in SQL.
+
+Only minor accessability & QoL changes compared to phase 2, after receiving positive feedback.
+
+Please contact me if have any issues with the installing or setup process.
+email/chat: tom.schmaeling@iu-study.org.
+
+github reposity for convenience:
+https://github.com/LeftEmpty/AirBnB_DBMS_Imitation.
