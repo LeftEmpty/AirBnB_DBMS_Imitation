@@ -19,4 +19,4 @@ DELIMITER ;
 - if you would like to test this trigger, please run the statement above after the schema.sql file
 - concerning the functionality of this trigger; it constraints the end_date of a Booking entry to be after
 the respecive start_date 
-*/
+*/;

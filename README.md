@@ -91,6 +91,9 @@ This file can be omitted without any influence on the process and only serves as
 #### Data
 This file includes the bulk of the statements. This file includes 2000+ (includes docs & white space) lines of sql statements that serve to fill the database with properly linked, semi-realistic test data.
 
+#### Metadata
+This file includes the statements that were used to provide the metadata mentioned in the submission accompanying abstract. This file can be executed as is, but can also be ignored as it is not relevant to the implementation of the database.
+
 #### Test
 Test.sql includes test cases for each table, putting focus on more important tables that are relevant to the main functionality of the database. The provided primarily test the integrity of the relationship between tables and the related data stored within them. This means that test cases will select data entries that store data over multiple related tables. By viewing this information, we can confirm that data was properly inserted into these tables. (This file also includes examples which will run during installation). Additionally, equivalence classes have been used to reduce the workload to a reasonable amount without reducing the achieved result.
 
@@ -124,6 +127,19 @@ This list merely serves as an overview of all test cases, so you know what to se
     * `SELECT * FROM iu_chat_details_view WHERE chat_id = 1;`
 * iu_chat_messages_view
     * `SELECT * FROM iu_chat_messages_view WHERE owning_chat_id_ref = 1;`
+
+To delete from the database, use simple DELETE FROM statements and delete all relevant data from the tables. I recommend writing transactions to protect transactions to protect data integrity. To see the relevant tables that need their data deleted, please view the ER diagram and write your transactions that way.
+
+Example for deleting all data relevant to a certain user:
+START TRANSACTION;
+DELETE FROM UserReview WHERE user_id = 1;
+DELETE FROM Booking WHERE guest_id = 1 OR host_id = 1;
+DELETE FROM Host WHERE user_id = 1;
+DELETE FROM Guest WHERE user_id = 1;
+DELETE FROM Image WHERE uploaded_by_user_id = 1;
+DELETE FROM Address WHERE address_id IN (SELECT address_id FROM User WHERE user_id = 1);
+DELETE FROM User WHERE user_id = 1;
+COMMIT;
 
 ## Future Outlook
 This project mainly served as a learning project and therefore, has a lot of room for expansion and improvement. In the future i'd like to additional triggers, refacture the schema.sql file and add on more tables to expand the system further in the direction of the actual application it is imitated after.

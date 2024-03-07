@@ -320,3 +320,29 @@ SELECT * FROM Language;
 
 /* EmergencyContact data */
 SELECT * FROM EmergencyContact;
+
+
+-------------------------------------------------------------------------------------------------
+/* deleting data example */ 
+-------------------------------------------------------------------------------------------------
+/* the following shows an example of deleting data from the database while protecting data integrity 
+- commented out for obvious reasons
+- i want to stress that this is merely an example and needs to be adjusted to fit individual use cases
+- it also depends on the application, for example chats may want to be preserved even if the user was deleted
+  (which would then be checked before requesting the chat to display something like "deleted user" as the message author).
+*/
+
+/* example: delete data relevant to a user */
+/*
+START TRANSACTION;
+DELETE FROM UserReview WHERE user_id = 1;
+DELETE FROM Booking WHERE guest_id = 1 OR host_id = 1;
+DELETE FROM Host WHERE user_id = 1;
+DELETE FROM Guest WHERE user_id = 1;
+DELETE FROM Image WHERE uploaded_by_user_id = 1;
+DELETE FROM Address WHERE address_id IN (SELECT address_id FROM User WHERE user_id = 1);
+DELETE FROM User WHERE user_id = 1;
+COMMIT;
+*/
+-- this will return an error at the end that can be safely ignored
+;
