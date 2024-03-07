@@ -1,0 +1,15 @@
+Hello Tom,
+
+Thank you for your submission. 
+
+- Data dictionary is missing from your submission. 
+ 
+
+In ERM:
+- please rename the PK attributes in each table from just id to user_id and host_id etc in their own tables. 
+- user review: who will be giving a review to the user ? 
+
+Rest of your work is fine. 
+
+Best Regards
+Musharaf
